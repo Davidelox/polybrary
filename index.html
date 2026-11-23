@@ -3,11 +3,40 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <title>Polybrary</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
 </head>
 <body>
-<div id="app"></div>
-<script type="module" src="/src/main.ts"></script>
+<div id="stage">
+  <canvas id="cv" width="320" height="240" aria-label="Habitación en 3D con tres estanterías: tuya, de tu pareja y compartida"></canvas>
+  <div class="vig"></div>
+  <div class="hud">
+    <div class="title">POLYBRARY</div>
+    <div class="tabs" role="group" aria-label="Estante">
+      <button class="tab" data-shelf="0" aria-pressed="false">TÚ</button>
+      <button class="tab" data-shelf="1" aria-pressed="true">LOS DOS</button>
+      <button class="tab" data-shelf="2" aria-pressed="false">PAREJA</button>
+      <button class="tab" id="ov" aria-pressed="false">VISTA GENERAL</button>
+    </div>
+    <div class="win menu">
+      <div class="hd" id="shelfName">LOS DOS</div>
+      <ul class="secs" id="secs"></ul>
+    </div>
+    <div class="pads" role="group" aria-label="Mover cursor">
+      <button class="pad" id="pL" aria-label="Estante anterior">◀</button>
+      <button class="pad" id="pU" aria-label="Sección anterior">▲</button>
+      <button class="pad" id="pD" aria-label="Sección siguiente">▼</button>
+      <button class="pad" id="pR" aria-label="Estante siguiente">▶</button>
+    </div>
+    <div class="win info">
+      <div class="hd" id="secName">PELÍCULAS</div>
+      <ul class="ent" id="ent"></ul>
+      <p class="note">Datos de ejemplo. Flechas para moverte, V para la vista general.</p>
+    </div>
+  </div>
+</div>
+<script type="module" src="/src/main.js"></script>
 </body>
 </html>
