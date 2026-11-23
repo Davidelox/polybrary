@@ -2,7 +2,8 @@ import { createHash } from 'node:crypto';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { PNG } from 'pngjs';
 import { expect, test } from 'vitest';
-import { H, W, buildScene, render } from '../src/engine/engine.js';
+import { H, W, render } from '../src/engine/raster';
+import { buildScene } from '../src/scene';
 
 // Fotogramas de referencia: SHA-256 del framebuffer por escenario (V8/Node).
 // UPDATE_GOLDEN=1 regenera tests/golden/frames.json y vuelca PNG en tests/__out__/.
